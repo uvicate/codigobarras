@@ -117,6 +117,7 @@ $(document).ready(function() {
 			console.log(jsonObj);
 		}
 	};
+	
 	/*
 	 $.ajax(enviarPeticion);
 
