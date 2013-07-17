@@ -28,6 +28,7 @@ $(document).ready(function() {
 			val = nVal;
 		}
 
+		fecha(miObjeto.getVal());
 	}
 
 	function fecha(m) {
