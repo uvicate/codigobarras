@@ -50,7 +50,8 @@ class luhn{
 		 $str = (string)$sum;
 		 $ul =  substr($str, -1);
 		 $verif = $number.$ul;
-		return $verif;
+		 $codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
+		return $codigoBarras;
 		} 	
 	
 }
