@@ -60,7 +60,7 @@ class luhn{
 
 $num = $digito ->crearDigitoVerificador();
 
-echo $num;
-//die('hasta aqui');
-*/
+echo gettype($num);
+//die('hasta aqui');*/
+
 ?>

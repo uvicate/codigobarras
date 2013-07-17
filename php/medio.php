@@ -2,6 +2,8 @@
 
 require_once (__DIR__ . "/digitoVerificador.class.php");
 require_once (__DIR__ . '/consulta.class.php');
+require_once (__DIR__ . '/conexionCliente.php');
+
 
 class medio {
 	// Método que recibe la peticion por parte del cliente
@@ -46,8 +48,12 @@ class medio {
 		return '09';
 	}
 	public function getFecha(){
-			
-		return '21122012';
+			//$fecha = $f;
+			/*$dat3 = new conCliente();
+			$fecha=$dat3->recibirPeticion();
+		*/
+			$fecha='21122012';
+		return $fecha;
 	}
 	public function getMonto(){
 			
@@ -56,9 +62,9 @@ class medio {
 
 }
 
-$medio1 = new medio();
-$datos = $medio1 -> generarDigito();
-echo($datos);
+/*$medio1 = new medio();
+$datos = $medio1 -> getFecha();*/
+
 //$datos = $medio1 -> enviarCliente();
 //$digito=  $medio1->obtenerDatos();
 

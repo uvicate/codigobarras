@@ -5,5 +5,3 @@
 console.log (val);
 
 });*/
-
-HOLI n.n
