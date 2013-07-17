@@ -55,13 +55,13 @@ class consulta {
 
 			$concat = $a . $b . $c . $d . $e . $f;
 
-			$codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
+			
 
 		} else {
 			echo 'Datos incorrectos erroneos, ud ha ingresado un id incorrecto o a consultado 
 			datos de un usuario con datos incompletos';
 		}
-		return $codigoBarras;
+		return $concat;
 
 	}
 
