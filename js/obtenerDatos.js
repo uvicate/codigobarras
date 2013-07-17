@@ -94,23 +94,6 @@ $(document).ready(function() {
 		return mesVig;
 	}
 
-	// fecha(val);
-	//var n = new fecha();
-	/*var jsonObj = {
-
-	"fecha" : '10122014'
-	}
-
-	// Lets convert our JSON object
-	var postData = JSON.stringify(jsonObj);
-
-	// Lets put our stringified json into a variable for posting
-	var postArray = {
-	json : postData
-	};*/
-
-	//var f = fecha('5');
-
 	var enviarPeticion = {
 
 		type : 'POST',
@@ -133,23 +116,5 @@ $(document).ready(function() {
 			//avisar que ocurrió un error
 		}
 	};
-
-	/*var recibirDatos = {
-		type : "POST",
-		url : "./php/conexionCliente.class.php",
-		async : true,
-		success : function(datos) {
-			var data = datos;
-
-			$("#contBarcode").JsBarcode(data, {
-				width : 1.5,
-				height : 40,
-			});
-
-		},
-		error : function(obj, error, objError) {
-			//avisar que ocurrió un error
-		}
-	};*/
 
 });
