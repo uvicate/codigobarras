@@ -61,7 +61,7 @@ $digito = new luhn();
 
 $num = $digito ->crearDigitoVerificador($num);
 
-echo($num);
+print_r($num, TRUE);
 //Quiero tocar tus teclitas bebé n_________________n
 //die('hasta aqui');*/
 
