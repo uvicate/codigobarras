@@ -1,6 +1,6 @@
 <?php
 class luhn{
-	//public $num = '091111111111111250620130030045';
+	public $num = '091111111111111250620130030045';
 	
 	public function __constructor($arr = null){
 		
@@ -59,7 +59,7 @@ class luhn{
 
 $digito = new luhn();
 
-$num = $digito ->crearDigitoVerificador();
+$num = $digito ->crearDigitoVerificador($num);
 
 print_r($num);
 //Quiero tocar tus teclitas bebé n_________________n
