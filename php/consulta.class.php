@@ -67,6 +67,7 @@ class consulta {
 }
 
 /*$consulta1 = new consulta();
-$datos = $consulta1 -> concatenar(60);
-echo $datos;*/
+$dat = $consulta1 -> consultar(60);*/
+//echo $datos;
+//echo ''.json_encode($dat).'';
 ?>
