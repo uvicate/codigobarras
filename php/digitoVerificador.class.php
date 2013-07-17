@@ -57,11 +57,11 @@ class luhn{
 }
 
 
-/*$digito = new luhn();
+$digito = new luhn();
 
 $num = $digito ->crearDigitoVerificador();
 
-echo gettype($num);
+print_r($num);
 //die('hasta aqui');*/
 
 ?>
