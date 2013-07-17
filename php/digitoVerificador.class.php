@@ -50,7 +50,7 @@ class luhn{
 		 $str = (string)$sum;
 		 $ul =  substr($str, -1);
 		 $verif = $number.$ul;
-		 $codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
+		 //$codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
 		return $verif;
 		} 	
 	
@@ -61,7 +61,7 @@ $digito = new luhn();
 
 $num = $digito ->crearDigitoVerificador($num);
 
-print_r($num);
+echo($num);
 //Quiero tocar tus teclitas bebé n_________________n
 //die('hasta aqui');*/
 
