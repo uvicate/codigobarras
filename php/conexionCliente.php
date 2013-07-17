@@ -45,5 +45,6 @@ $medio2 = new conCliente();
 $datos2 = $medio2 -> recibirPeticion();
 
 echo $datos2;
+die();
 ?>
 
