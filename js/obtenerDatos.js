@@ -27,7 +27,7 @@ $(document).ready(function() {
 		var miObjeto = new valores();
 
 		fecha(miObjeto.getVal());
-		$.ajax(enviarPeticion);
+		//$.ajax(enviarPeticion); 
 	});
 
 	function fecha(m) {
