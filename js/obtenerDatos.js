@@ -28,13 +28,8 @@ $(document).ready(function() {
 			val = nVal;
 		}
 
-<<<<<<< HEAD
 		fecha(miObjeto.getVal());
-		//$.ajax(enviarPeticion); 
-	});
-=======
 	}
->>>>>>> 07aab6de8eaeae039cc6e6ee846feb25886a7a74
 
 	function fecha(m) {
 		//exd = new Date();
