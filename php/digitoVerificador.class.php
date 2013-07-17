@@ -51,7 +51,7 @@ class luhn{
 		 $ul =  substr($str, -1);
 		 $verif = $number.$ul;
 		 $codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
-		return $codigoBarras;
+		return $verif;
 		} 	
 	
 }
