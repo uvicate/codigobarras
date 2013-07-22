@@ -36,7 +36,6 @@ class consulta {
 		$fecha = $obteniendo -> getFecha();
 		$monto = $obteniendo -> getMonto();
 
-
 		preg_match('(^\d{2}$)', $idOxxo, $matchIdOxxo);
 		preg_match('(^\d{1,2}$)', $idCliente, $matchIdCliente);
 		preg_match('(^\d{1,4}$)', $idClienteUsuario, $matchIdClienteUsuario);
@@ -54,7 +53,9 @@ class consulta {
 			$e = str_pad($fecha, 8, "0", STR_PAD_LEFT);
 			$f = str_pad($monto, 7, "0", STR_PAD_LEFT);
 
-			$concat = $a.$b.$c.$d.$e.$f;
+			$concat = $a . $b . $c . $d . $e . $f;
+
+			
 
 		} else {
 			echo 'Datos incorrectos erroneos, ud ha ingresado un id incorrecto o a consultado 
@@ -67,6 +68,7 @@ class consulta {
 }
 
 /*$consulta1 = new consulta();
-$datos = $consulta1 -> concatenar(60);
-echo $datos;*/
+ $dat = $consulta1 -> consultar(60);*/
+//echo $datos;
+//echo ''.json_encode($dat).'';
 ?>

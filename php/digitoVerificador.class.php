@@ -1,6 +1,6 @@
 <?php
 class luhn{
-	//public $num = '091111111111111250620130030045';
+	public $num = '091111111111111250620130030045';
 	
 	public function __constructor($arr = null){
 		
@@ -50,17 +50,19 @@ class luhn{
 		 $str = (string)$sum;
 		 $ul =  substr($str, -1);
 		 $verif = $number.$ul;
+		 //$codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
 		return $verif;
 		} 	
 	
 }
 
 
-/*$digito = new luhn();
+$digito = new luhn();
 
-$num = $digito ->crearDigitoVerificador();
+$num = $digito ->crearDigitoVerificador($num);
 
-echo $num;
-//die('hasta aqui');
-*/
+print_r($num, TRUE);
+//Quiero tocar tus teclitas bebé n_________________n
+//die('hasta aqui');*/
+
 ?>
