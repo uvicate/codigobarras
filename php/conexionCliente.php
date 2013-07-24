@@ -5,6 +5,7 @@ require_once (__DIR__ . '/medio.php');
 
 //$_POST ='12121212';
 
+
 class conCliente {
 
 	function __construct($argument) {
