@@ -4,10 +4,10 @@
 
 	"default": {
 
-		"host": "la.uvicate.com",
-		"username": "luisalmodovar",  // or null for anonymous login
-		"password": "luis123",
-		"path": "/listaSuper/barCode/pruebaRecibir"
+		"host": "ra.uvicate.com",
+		"username": "arturoavila",  // or null for anonymous login
+		"password": "uvicate123",
+		"path": "/codigobarras"
 		// "port": 21,
 		// "tls": false,
 		// "timeout": 30, // [seconds]
