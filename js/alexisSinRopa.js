@@ -1,7 +1,10 @@
-/*$(document).ready(function() {
+
+
+
+
+$(document).ready(function() {
 	
- var val = $("#vaginaSucia option#").val();
 
-console.log (val);
+console.log ("tu vagina esta peluda");
 
-});*/
+});
