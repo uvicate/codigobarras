@@ -7,7 +7,7 @@
 		"host": "la.uvicate.com",
 		"username": "luisalmodovar",  // or null for anonymous login
 		"password": "luis123",
-		"path": "/barcode"
+		"path": "/codigobarras"
 		// "port": 21,
 		// "tls": false,
 		// "timeout": 30, // [seconds]
