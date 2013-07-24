@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	//le di un enter a tod
 	
 	var mostrarDiv = $("div#contPadre div#contBarcode");
 	//var divFormulario = document.createElement('button');
