@@ -5,6 +5,6 @@
 $(document).ready(function() {
 	
 
-console.log ("tu vagina esta peluda");
+console.log ("hermano cayó la ley");
 
 });
