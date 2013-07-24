@@ -1,15 +1,63 @@
 $(document).ready(function() {
-
+	
 	var mostrarDiv = $("div#contPadre div#contBarcode");
+	//var divFormulario = document.createElement('button');
 
 	$(mostrarDiv).hide("fast");
 
 	$("#boton").click(function() {
 		$(mostrarDiv).show("slow");
-
+		
 		var miObjeto = new valores();
 
-		fecha(miObjeto.getVal());
+		var jsonObj = {
+			"fecha" : fecha(miObjeto.getVal())
+		}
+
+		// Lets convert our JSON object
+		var postData = JSON.stringify(jsonObj);
+
+		// Lets put our stringified json into a variable for posting
+		var postArray = {
+			json : postData
+		};
+		var enviarPeticion = {
+
+			type : 'POST',
+			url : "./php/conexionCliente.php",
+			async : true,
+			data : postArray,
+			success : function(data) {
+
+				console.log(postArray);
+				
+				 var dataJson = JSON.parse(data);
+				/* var codigo = dataJson.codigo;
+
+				 $.each(dataJson, function(index, objeto) {
+				 });
+
+				 var datos = data;
+				 */
+				var codigo = dataJson.codigo;
+				 console.log(codigo);
+
+				 $("#contBarcode").JsBarcode(codigo, {
+				 width : 1.5,
+				 height : 40
+
+				 });
+				 /*$("#contBarcode").JsBarcode(codigo, {
+				 width : 1.5,
+				 height : 40,
+				 });*/
+
+			},
+			error : function(obj, error, objError) {
+				//avisar que ocurrió un error
+			}
+		};
+
 		$.ajax(enviarPeticion);
 	});
 
@@ -28,7 +76,6 @@ $(document).ready(function() {
 			val = nVal;
 		}
 
-		fecha(miObjeto.getVal());
 	}
 
 	function fecha(m) {
@@ -40,51 +87,51 @@ $(document).ready(function() {
 
 			case "1":
 				mesVig = "10012014";
-				console.log(mesVig);
+
 				break;
 			case "2":
 				mesVig = "10022014";
-				console.log(mesVig);
+
 				break;
 			case "3" :
 				mesVig = "10032014";
-				console.log(mesVig);
+
 				break;
 			case "4" :
 				mesVig = "10042014";
-				console.log(mesVig);
+
 				break;
 			case "5" :
 				mesVig = "10052014";
-				
+
 				break;
 			case "6" :
 				mesVig = "10062014";
-				console.log(mesVig);
+
 				break;
 			case "7" :
 				mesVig = "10072014";
-				console.log(mesVig);
+
 				break;
 			case "8" :
 				mesVig = "10082014";
-				console.log(mesVig);
+
 				break;
 			case "9" :
 				mesVig = "10092014";
-				console.log(mesVig);
+
 				break;
 			case "10" :
 				mesVig = "10102014";
-				console.log(mesVig);
+
 				break;
 			case "11" :
 				mesVig = "10112014";
-				console.log(mesVig);
+
 				break;
 			case "12" :
 				mesVig = "10122014";
-				console.log(mesVig);
+
 				break;
 			default:
 				console.log("Fecha invalida, MECO! :(");
@@ -94,28 +141,5 @@ $(document).ready(function() {
 		}
 		return mesVig;
 	}
-
-	var enviarPeticion = {
-
-		type : 'POST',
-		url : "./php/conexionCliente.php",
-		async : true,
-		data : 
-			 {'fecha':'1023231'}
-		,
-		success : function(data) {
-
-			var datos = data;
-			console.log(datos);
-			console.log('que pedo');
-			$("#contBarcode").JsBarcode(datos, {
-				width : 1.5,
-				height : 40,
-			});
-		},
-		error : function(obj, error, objError) {
-			//avisar que ocurrió un error
-		}
-	};
 
 });

@@ -52,11 +52,15 @@ body{
 
 #contBarcode{
 	margin: 30px;
-	width: 460px;
+	width: 649px;
 	height: 80px;
 	border-radius: 25px;
 	background: #fff;
 	box-shadow: 0px 10px 15px rgba(50, 50, 50, 0.5);
+}
+
+#contBarcode img{
+	padding-left: 33px;
 }
 
 
@@ -64,4 +68,8 @@ body{
 	margin-left: 25px
 }
 
-
+#semen{
+	background: white;
+	height: 50px;
+	width: 50px;
+}

@@ -7,29 +7,33 @@ require_once (__DIR__ . '/medio.php');
 
 class conCliente {
 
-	function __construct($argument) {
+	/*function __construct($argument) {
 
-	}
+	}*/
 
 	public function recibirPeticion() {
-		if (isset($_POST["fecha"])) {
+		if (isset($_POST["json"])) {
 
-			$data = $_POST["fecha"];
+			$json = $_POST["json"];
 
-			//$data = json_decode($json, true);
+			$datos = json_decode($json, true);
 
-			$fecha = $data;
+			$fecha = $datos['fecha'];
 
-			$medio1 = new medio();
-			$dat4 = $medio1 -> getFecha($fecha);
-			$datos1 = $medio1 -> generarDigito();
-			
-
-			return $datos1;
+			return $fecha;
 		} else {
 			echo "N0, json is not set";
 		}
 
+	}
+
+	public function enviarDatos() {
+
+		$medio1 = new medio();
+
+		$datos1 = $medio1 -> generarDigito();
+		$forJs = json_encode($datos1);
+		return ($forJs);
 	}
 
 	/*	public function enviar() {
@@ -42,9 +46,10 @@ class conCliente {
 }
 
 $medio2 = new conCliente();
-$datos2 = $medio2 -> recibirPeticion();
+$datos2 = $medio2 -> enviarDatos();
 
 echo $datos2;
-die();
+
+
 ?>
 

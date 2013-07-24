@@ -1,4 +1,0 @@
-codigobarras
-============
-
-Código de barras

@@ -31,14 +31,14 @@ class medio {
 	}
 
 	//enviaConcatenacion a el cliente
-	public function enviarAlCliente() {
+	/*public function enviarAlCliente() {
 
 		$medio2= new medio();
 		$medio2->generarDigito();
 
 		return ;
 
-	}
+	}*/
 
 	public function getIdCliente() {
 		return '60';
@@ -51,8 +51,8 @@ class medio {
 			//$fecha = $f;
 			/*$dat3 = new conCliente();
 			$fecha=$dat3->recibirPeticion();
-		*/
-			$fecha='21122012';
+		*/$conCliente = new conCliente();
+		  $fecha= $conCliente ->recibirPeticion();
 		return $fecha;
 	}
 	public function getMonto(){

@@ -60,7 +60,8 @@
 		
 		var imagen = document.createElement('img');
 		this.prepend(imagen);
-		this.css("width", canvas.width + 40)
+		this.css("width", canvas.width + 30);
+		console.log(canvas.width + 30);
 		var footer = document.createElement('p');
 		var textoFooter = document.createTextNode(content);
 		footer.appendChild(textoFooter);

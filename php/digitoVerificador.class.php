@@ -1,8 +1,8 @@
 <?php
 class luhn{
-	public $num = '091111111111111250620130030045';
+	//public $num = '091111111111111250620130030045';
 	
-	public function __constructor($arr = null){
+	/*public function __constructor($arr = null){
 		
 		foreach ($arr as $key => $value) {
 			$this->{$key} = $value;
@@ -14,7 +14,7 @@ class luhn{
 	
 	public function __toString(){
 		return 'Mi número default es: '.$this->num;
-	}
+	}*/
 	
 	public function crearDigitoVerificador($number ) {
 		
@@ -50,18 +50,18 @@ class luhn{
 		 $str = (string)$sum;
 		 $ul =  substr($str, -1);
 		 $verif = $number.$ul;
-		 //$codigoBarras['CodigoDeBarras'][] = array('codigo' => $concat);
-		return $verif;
+		 $codigoBarras = array('codigo' => $verif);
+		return $codigoBarras;
 		} 	
 	
 }
 
-
+/*
 $digito = new luhn();
 
 $num = $digito ->crearDigitoVerificador($num);
 
-print_r($num, TRUE);
+print_r($num);
 //Quiero tocar tus teclitas bebé n_________________n
 //die('hasta aqui');*/
 

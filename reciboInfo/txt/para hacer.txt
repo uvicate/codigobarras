@@ -1,1 +1,0 @@
-todo sera creado en php , la obtencion de datos de un .txt por medio de de un php, desintegrar los datos que se obtengan del .txt
