@@ -1,7 +1,5 @@
-/*$(document).ready(function() {
+$(document).ready(function() {
 	
- var val = $("#vaginaSucia option#").val();
+ console.log ('hola andres');
 
-console.log (val);
-
-});*/
+});
