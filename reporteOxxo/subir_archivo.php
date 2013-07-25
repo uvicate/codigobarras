@@ -36,11 +36,12 @@ if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name']
 
 
   //SI QUEREMOS VER TODO EL CONTENIDO EN BRUTO:
-  var_dump($data);
+  print_r($data[0]);
+  echo "<br/>";
 
 
   //SI QUEREMOS IMPRIMIR UN SOLO DATO
-  echo "<br/>Imprimir el primer dato solo: {$data[0]}<br/>";
+  //echo "<br/>Imprimir el primer dato solo: {$data[0]}<br/>";
 
 
   //NOTA CADA VUELTA EQUIVALE A UNA LINEA COMPLETA DEL ARCHIVO CSV
