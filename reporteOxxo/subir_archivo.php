@@ -1,15 +1,5 @@
 <?php
-/**
- *
- * @author   Horacio Romero Mendez (angelos)
- * @License   Copyleft 2011
- * @since   Sep 4, 2011 5:20:20 PM
- * @Internal  GNU/Linux Arch 2010.05 Notebook
- * 
- */
 
- 
-//COMO EL INPUT FILE FUE LLAMADO archivo ENTONCES ACCESAMOS A TRAVÃ‰S DE $_FILES["archivo"]
 ?>
 <table align="center">
  <tr>
