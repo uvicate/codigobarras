@@ -4,16 +4,12 @@
 
 	"default": {
 
-<<<<<<< HEAD
-		"host": "la.uvicate.com",
-		"username": "luisalmodovar",  // or null for anonymous login
-		"password": "luis123",
-=======
-		"host": "ra.uvicate.com",
-		"username": "arturoavila",  // or null for anonymous login
-		"password": "uvicate123",
->>>>>>> bfc05ee2c59ffc897d8a9b48eb73c56b2558b608
-		"path": "/codigobarras"
+
+		"host": "uvicate.com",
+		"username": "andrescaro",  // or null for anonymous login
+		"password": "acgcaro",
+
+		"path": "/acg/codigobarras"
 		// "port": 21,
 		// "tls": false,
 		// "timeout": 30, // [seconds]
