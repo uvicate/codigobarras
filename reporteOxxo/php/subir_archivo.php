@@ -1,6 +1,4 @@
-<?php
 
-?>
 <table align="center">
  <tr>
   <td>
@@ -17,18 +15,20 @@
 
 
 <?php
-//SI EL ARCHIVO SE ENVIÃ“ Y ADEMÃS SE SUBIO CORRECTAMENTE
+//SI EL ARCHIVO SE ENVIÃ“ Y ADEMÃS SE SUBIO CORRECTAMENTE
 if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name'])) {
  
  //SE ABRE EL ARCHIVO EN MODO LECTURA
  $fp = fopen($_FILES['archivo']['tmp_name'], "r");
  //SE RECORRE
  while (!feof($fp)){ //LEE EL ARCHIVO A DATA, LO VECTORIZA A DATA
+
+  //preg_match_all('[a-z]');
   
   //SI SE QUIERE LEER SEPARADO POR TABULADORES
-  //$data  = explode(" ", fgets($fp));
+   $data  = explode(",", fgets($fp));
   //SI SE LEE SEPARADO POR COMAS
-  $data  = explode(",", fgets($fp));
+  //$data  = explode(",", fgets($fp));
   
   //AHORA DATA ES UN VECTOR Y EN CADA POSICIÃ“N CONTIENE UN VALOR QUE ESTA SEPARADO POR COMA.
   //EJEMPLO    A, B, C, D
@@ -36,8 +36,16 @@ if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name']
 
 
   //SI QUEREMOS VER TODO EL CONTENIDO EN BRUTO:
-  print_r($data[0]);
-  echo "<br/>";
+  foreach ($data as $key => $value) {
+
+       echo($key.' '.$value);
+       echo "<br/>";
+    
+  }
+ 
+  
+  //print_r($data[1]);
+  // echo "<br/>";
 
 
   //SI QUEREMOS IMPRIMIR UN SOLO DATO
@@ -47,8 +55,9 @@ if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name']
   //NOTA CADA VUELTA EQUIVALE A UNA LINEA COMPLETA DEL ARCHIVO CSV
  } 
    
- echo "Archivo recorrido";
+ echo "Archivo recorrido alexis";
    
 } else 
  echo "Error de subida";
-?> 
+
+?>  
