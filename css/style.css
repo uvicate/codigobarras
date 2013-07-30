@@ -5,20 +5,35 @@ body{
 
 #divInfo{
 	width: 100% !important;
-	height: 250px;
-	background-image: url(./images/ofii.jpg);
-	
+	height: 200px;
+	background-image: url(./ofii.jpg);
+	padding-top: 5px;
 
 }
 
 #divMenu {
 	
 	background: rgba(255, 255, 255, .75);
-	height: 40px;
-	padding-top: 10px;
+	height: 110px;
+	margin-top: 10px;
 }
 
-#divMenu ul li{
+
+#divMenu ul{
+	padding-top: 20px;
+}
+
+#divMenu ul:first-child{
+	
+}
+
+#menu{
+	float: left;
+	
+
+}
+
+#menu ul li{
 	display: inline-block;
 	background-color: #2E9AFE;
 	border-radius: 5px;
@@ -29,7 +44,21 @@ body{
 	color: #fff;
 	box-shadow: 0px 3px 5px rgba(50, 50, 50, 0.5);
 	padding-top: 10px;
-	
+}
+
+#imagen{
+	float: left;
+	width: 100px;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+#imagen img{
+	background: url('../img/Isotipo-con-texto.png');
+	background-size: 103px;
+	width: 59px;
+	height: 75px;
+
 }
 
 #divPadre{
