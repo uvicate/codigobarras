@@ -1,20 +1,8 @@
 
-  <table align="center">
-   <tr>
-    <td>
-     <b>Nombre:</b>: <?php echo $_FILES["archivo"]["name"]?>
-
-     <b>Tipo:</b>: <?php echo $_FILES["archivo"]["type"]?>
-
-     <b>Subida:</b>: <?php echo ($_FILES["archivo"]["error"]) ? "Incorrecta" : "Correcta"?>
-
-     <b>TamaÃ±o:</b>: <?php echo $_FILES["archivo"]["size"]?> bytes
-   </td>
-  </tr>
-  </table>
-
-
   <?php
+  include_once 'conexion.php';
+  include_once 'bd.class.php';
+  
 
   class Datos {
 
@@ -35,15 +23,17 @@
         $data  = explode(",", fgets($fp));
         
         //-> COMENTARIOS ALEXIS 
-        //->CICLO DE LECTURA DE $DATA
+        //-> CICLO DE LECTURA DE $DATA
           foreach ($data as $key => $value) {
 
-                echo($key.' '.$value);
-                echo "<br/>";
+              $insertar=new BD();
+              $insertar-> queryInsert('recibosOxxo',$value);
+
+                
+              //echo($key.' '.$value.'</br> </n>');                 
+                
 
                }
-       
-
         //NOTA CADA VUELTA EQUIVALE A UNA LINEA COMPLETA DEL ARCHIVO CSV
      } 
 
@@ -51,8 +41,6 @@
 
    } else 
    echo "Error de subida";
-
-
 
 
   }
