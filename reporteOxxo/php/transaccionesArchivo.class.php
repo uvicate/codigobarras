@@ -26,14 +26,23 @@
         //-> CICLO DE LECTURA DE $DATA
           foreach ($data as $key => $value) {
 
-              $insertar=new BD();
-              $insertar-> queryInsert('recibosOxxo',$value);
+            echo($key.' '.$value.'</br> ');
 
-                
-              //echo($key.' '.$value.'</br> </n>');                 
-                
+            global $conexion;
 
-               }
+            $query_sql = "INSERT INTO recibosOxxo(nombrePlazaOxxo,nombreTiendaOxxo,fechaPagoEnOxxo,horaPagoEnOxxo,barcodeReciboPt1,barcodeReciboPt2,importe) 
+            VALUES('".$value[0]."','".$value[1]."','".$value[2]."','".$value[3]."','".$value[4]."','".$value[5]."','".$value[5]."')";
+        
+            $conexion -> consulta($query_sql);
+
+            //para realizar consultas
+            //$query_php = $conexion -> datos(true);
+
+               
+          }
+
+        
+
         //NOTA CADA VUELTA EQUIVALE A UNA LINEA COMPLETA DEL ARCHIVO CSV
      } 
 
@@ -44,6 +53,19 @@
 
 
   }
+
+  public function guardarDatosTxt() {
+    global $conexion;
+
+    $query_sql = "INSERT INTO recibosOxxo(nombrePlazaOxxo,nombreTiendaOxxo,fechaPagoEnOxxo,horaPagoEnOxxo,barcodeReciboPt1,barcodeReciboPt2,importe) 
+    VALUES('Plaza cruz','Faja de Oro BJX','20101227','16:52','370000048197280220110137','926000000000000000000000',0000000004235.00)";
+    
+    $conexion -> consulta($query_sql);
+    $query_php = $conexion -> datos(true);
+  }
+    
+
+
 }
 
 $datos = new Datos();
