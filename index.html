@@ -14,9 +14,9 @@
 				<div class="clear"></div>
 				<div id="menu">
 					<ul>
-						<li><a href="http://ra.uvicate.com/codigobarras/index.html">Home</a></li>
-						<li><a href="http://ra.uvicate.com/codigobarras/reporteOxxo/index.php">Generar Código</a></li>
-						<li><a href="http://ra.uvicate.com/codigobarras/codigobarras/index.html">Reporte Oxxo</a></li>
+						<!--<li><a href="http://ra.uvicate.com/codigobarras/index.html">Home</a></li>--> 
+						<li><a href="http://ra.uvicate.com/codigobarras/index.html">Reporte Oxxo</a></li>
+						<li><a href="http://ra.uvicate.com/codigobarras/codigobarras/index.html">Generar Código</a></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -24,6 +24,15 @@
 		</div>
 		<div id="contTotal" class="container container-bottom">
 			<div id="divDespliegue" class="container marketing">
+				<form method="post" action="./reporteOxxo/php/transaccionesArchivo.class.php" enctype="multipart/form-data" id="testform">
+					<br>
+					<br>
+					<br>
+					 Elija un Archivo:
+					<br>
+					<input name="archivo" type="file" id="archivo">
+					<input name="boton" type="submit" id="boton" value="Subir">
+				</form>
 
 			</div>
 
@@ -34,7 +43,7 @@
 	      		<p>Calle 3ra y Morelos #807 int 4, contacto@uvicate.com</p>
 	      		<p>01 800 500 CREA (2732)</p>
 	      		<p>+52 614 423 01 58</p>
-			</div>
+			</div> 
 		</div>
 	</div>
 </body>
