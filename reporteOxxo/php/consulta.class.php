@@ -1,6 +1,6 @@
 <?php
 require_once ("conexion.php");
-require_once (__DIR__ . '/medio.php');
+//require_once (__DIR__ . '/medio.php');
 
 class consulta {
 
@@ -15,7 +15,7 @@ class consulta {
 	public function consultar($id) {
 		global $conexion;
 
-		$query_sql = "SELECT  * FROM clienteUsuario WHERE idClienteUsuario='" . $id . "'";
+		$query_sql = "SELECT  * FROM clienteUsuario";
 
 		//"insert into compras values (0, '" . $nombre . "');";
 		$conexion -> consulta($query_sql);
@@ -68,7 +68,7 @@ class consulta {
 }
 
 /*$consulta1 = new consulta();
- $dat = $consulta1 -> consultar(60);*/
-//echo $datos;
+ $dat = $consulta1 -> consultar(60);
+print_r($dat);*/
 //echo ''.json_encode($dat).'';
 ?>
