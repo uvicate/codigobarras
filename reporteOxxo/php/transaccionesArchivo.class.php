@@ -21,29 +21,14 @@
 
         //SI SE LEE SEPARADO POR COMAS
         $data  = explode(",", fgets($fp));
-        
-        //-> COMENTARIOS ALEXIS 
-        //-> CICLO DE LECTURA DE $DATA
-          foreach ($data as $key => $value) {
-
-            echo($key.' '.$value.'</br> ');
 
             global $conexion;
 
             $query_sql = "INSERT INTO recibosOxxo(nombrePlazaOxxo,nombreTiendaOxxo,fechaPagoEnOxxo,horaPagoEnOxxo,barcodeReciboPt1,barcodeReciboPt2,importe) 
-            VALUES('".$value[0]."','".$value[1]."','".$value[2]."','".$value[3]."','".$value[4]."','".$value[5]."','".$value[5]."')";
+            VALUES('".$data[0]."','".$data[1]."','".$data[2]."','".$data[3]."','".$data[4]."','".$data[5]."','".$data[6]."')";
         
             $conexion -> consulta($query_sql);
 
-            //para realizar consultas
-            //$query_php = $conexion -> datos(true);
-
-               
-          }
-
-        
-
-        //NOTA CADA VUELTA EQUIVALE A UNA LINEA COMPLETA DEL ARCHIVO CSV
      } 
 
      echo "Archivo recorrido alexis";
