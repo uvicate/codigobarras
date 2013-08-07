@@ -128,9 +128,13 @@ body {
 
 }
 
+#menu ul li:hover{
+	background: #5dade2;
+}
+
 #menu ul li{
 	display: inline-block;
-	background: #5dade2;
+	background: #3498db;
 	border-radius: 5px;
 	margin-right: 20px;
 	margin-top: 15px;
@@ -148,10 +152,10 @@ body {
 	color: #fff;
 }
 
-#menu ul li a:hover{
+/*#menu ul li a:hover{
 	color: #E6E6E6;
 
-}
+}*/
 
 #imagen{
 	float: left;
