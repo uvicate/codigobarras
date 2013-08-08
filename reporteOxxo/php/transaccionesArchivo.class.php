@@ -7,46 +7,92 @@
   class Datos {
 
     public function leerArchivo (){
+      global $data;
+
          //SI EL ARCHIVO SE ENVIA Y ADEMAS SE SUBIO CORRECTAMENTE
           if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name'])) {
               //SE ABRE EL ARCHIVO EN MODO LECTURA
              $fp = fopen($_FILES['archivo']['tmp_name'], "r");
               //RECORRER $fp
              while (!feof($fp)){ //LEE EL ARCHIVO A DATA, LO VECTORIZA A DATA
-              //SI SE LEE SEPARADO POR COMAS
-              $data  = explode(",", fgets($fp)); 
-             } 
-              echo "Archivo recorrido alexis";
+              $data  = explode(",", fgets($fp));//SI SE LEE SEPARADO POR COMAS
+              
 
+              /*if(strlen($data[0]) <= 0){
+                die('invalido! no tiene datos');
+              }*/              
+
+                $nomPlazaOxxo = $data[0];  
+                $nomTiendaOxxo = $data[1];
+                $fechaPagoEnOxxo = $data[2];
+                $horaPagoEnOxxo = $data[3];
+                $barcodeReciboPt1 = $data[4];
+                $barcodeReciboPt2 = $data[5];
+                $importePagado = $data[6];
+                
+                foreach ($data as $key => $value) {
+                 echo count($data[6]);
+                 print_r($data[6]);
+                }
+
+                /*
+
+                preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
+                //print_r($matchNombrePlaza);
+
+                if(strlen($matchNombrePlaza) === strlen($data[0])){
+                    echo "paso";
+                    } 
+                    else
+                        echo "no pasa";
+
+                //var_dump ("tu match ". $matchNombrePlaza[0].'</br>');
+                /*preg_match('(^\d{25}$)', $nomTiendaOxxo, $matchTienda);
+                preg_match('(^\d{8}$)', $fechaPagoEnOxxo, $matchFechaPago);
+                preg_match('(^\d{5}$)', $horaPagoEnOxxo , $matchHoraPago);
+                preg_match('(^\d{1,25}$)', $barcodeReciboPt1, $matchBarcodePt1);
+                preg_match('(^\d{1,25}$)', $barcodeReciboPt2, $matchBarcodePt2);
+                preg_match('(^\d{1,7}$)', $importePagado, $matchImporte);*/
+
+                /*if(count($matchNombrePlaza > 0)){
+                 //echo "coincide :)";
+                }else{
+                 //echo "no coincide :(";
+                } */                                           
+             }                            
           } else{ 
               echo "Error de subida";
             }         
-          return $data;
+          
     } 
 
     public function guardarDatosTxt() {
 
       $datos = $this-> leerArchivo();
-      // global $conexion;
 
-      //          $idOxxo = $obteniendo -> getIdOxxo();
-      //          $idCliente = $object["idCliente"];
-      //          $idClienteUsuario = $object["idClienteUsuario"];
-      //          $idUsuario = $object["idUsuario"];
-      //          $fecha = $obteniendo -> getFecha();
-      //          $monto = $obteniendo -> getMonto();
+      if (count($matchNombrePlaza) < 0) {
 
-      //          preg_match('(^\d{2}$)', $idOxxo, $matchIdOxxo);
-      //          preg_match('(^\d{1,2}$)', $idCliente, $matchIdCliente);
-      //          preg_match('(^\d{1,4}$)', $idClienteUsuario, $matchIdClienteUsuario);
-      //          preg_match('(^\d{1,7}$)', $idUsuario, $matchIdUsuario);
-      //          preg_match('(^\d{8}$)', $fecha, $matchFecha);
-      //          preg_match('(^\d{1,7}$)', $monto, $matchMonto);
+                       echo "Archivo recorrido alexis";
+                      $a = $nomPlazaOxxo;
+                      $b = $nomTiendaOxxo;
+                      $c = $fechaPagoEnOxxo;
+                      $d = $horaPagoEnOxxo;
+                      $e = $barcodeReciboPt1;
+                      $f = $barcodeReciboPt2;
+                      $g = $importePagado;
 
-      //          $query_sql = "INSERT INTO recibosOxxo(nombrePlazaOxxo,nombreTiendaOxxo,fechaPagoEnOxxo,horaPagoEnOxxo,barcodeReciboPt1,barcodeReciboPt2,importe) 
-      //          VALUES('".$data[0]."','".$data[1]."','".$data[2]."','".$data[3]."','".$data[4]."','".$data[5]."','".$data[6]."')";
+                      global $conexion;
+
+                      $query_sql = "INSERT INTO recibosOxxo(nombrePlazaOxxo,nombreTiendaOxxo,
+                                          fechaPagoEnOxxo,horaPagoEnOxxo,barcodeReciboPt1,
+                                          barcodeReciboPt2,importe) 
+                      VALUES('".$a."','".$b."','".$c."','".$d."','".$e."','".$f."','".$g."')";
           
-      //          $conexion -> consulta($query_sql);
+                      //$conexion -> consulta($query_sql);
+      
+
+                }
+     
     }
     
 
