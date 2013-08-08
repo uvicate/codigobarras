@@ -81,14 +81,14 @@ body {
 	float: left;
 	width: 100px;
 	margin-left: 50px;
-	margin-top: 20px;
+	margin-top: 13px;
 }
 
 #imagen img{
 	background: url('../img/Isotipo-con-texto.png');
 	background-size: 103px;
-	width: 75px;
-	height: 75px;
+	width: 85px;
+	height: 85px;
 
 }
 
