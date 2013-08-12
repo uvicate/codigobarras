@@ -21,36 +21,30 @@
                               
 
                 $nomPlazaOxxo = $data[0];
-                echo "</br>tu nombre plaza: ".$nomPlazaOxxo." ";  
+                echo "</br></br>tu nombre plaza: ".$nomPlazaOxxo." ";  
                 /*$nomTiendaOxxo = $data[1];
                 $fechaPagoEnOxxo = $data[2];
                 $horaPagoEnOxxo = $data[3];
                 $barcodeReciboPt1 = $data[4];
                 $barcodeReciboPt2 = $data[5];
                 $importePagado = $data[6]; */ 
-                echo "</br> tu data 0 mide: ".strlen($data[0]);                          
+                echo "</br> tu data 0 mide: ".strlen($data[0])."</br>";                          
                 
-              preg_match('(^[A-Za-z0-9\s]+$)', $nomPlazaOxxo, $matchNombrePlaza); 
-                            
-                if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
+              //preg_match('(^[A-Za-z0-9/s]{1,25}+$)', $data[0], $matchNombrePlaza); 
+              preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza);    
+                echo($matchNombrePlaza[0]);
+               if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
                     echo " ,paso ";
                     echo '</br> es el match '.$matchNombrePlaza[0];
                     echo '</br> es lo recibido '.$data[0];
                     } 
                     else
                         echo "no pasa </br>";
-
+              
 
               
 
-               
-                
-                /*preg_match('(^\d{25}$)', $nomTiendaOxxo, $matchTienda);
-                preg_match('(^\d{8}$)', $fechaPagoEnOxxo, $matchFechaPago);
-                preg_match('(^\d{5}$)', $horaPagoEnOxxo , $matchHoraPago);
-                preg_match('(^\d{1,25}$)', $barcodeReciboPt1, $matchBarcodePt1);
-                preg_match('(^\d{1,25}$)', $barcodeReciboPt2, $matchBarcodePt2);
-                preg_match('(^\d{1,7}$)', $importePagado, $matchImporte);*/
+              
 
                 /*if(count($matchNombrePlaza > 0)){
                   $d[] = $data;
