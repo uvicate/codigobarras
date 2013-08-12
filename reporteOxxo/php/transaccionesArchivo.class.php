@@ -7,46 +7,46 @@
   class Datos {
 
     public function leerArchivo (){
-      global $data;
+      
 
          //SI EL ARCHIVO SE ENVIA Y ADEMAS SE SUBIO CORRECTAMENTE
           if (isset($_FILES["archivo"]) && is_uploaded_file($_FILES['archivo']['tmp_name'])) {
               //SE ABRE EL ARCHIVO EN MODO LECTURA
              $fp = fopen($_FILES['archivo']['tmp_name'], "r");
               //RECORRER $fp
+               $d = array();
              while (!feof($fp)){ //LEE EL ARCHIVO A DATA, LO VECTORIZA A DATA
               $data  = explode(",", fgets($fp));//SI SE LEE SEPARADO POR COMAS
-              
+                                     
+                              
 
-              /*if(strlen($data[0]) <= 0){
-                die('invalido! no tiene datos');
-              }*/              
-
-                $nomPlazaOxxo = $data[0];  
-                $nomTiendaOxxo = $data[1];
+                $nomPlazaOxxo = $data[0];
+                echo "</br>tu nombre plaza ".$nomPlazaOxxo;  
+                /*$nomTiendaOxxo = $data[1];
                 $fechaPagoEnOxxo = $data[2];
                 $horaPagoEnOxxo = $data[3];
                 $barcodeReciboPt1 = $data[4];
                 $barcodeReciboPt2 = $data[5];
-                $importePagado = $data[6];
+                $importePagado = $data[6]; */                           
                 
-                foreach ($data as $key => $value) {
-                 echo count($data[6]);
-                 print_r($data[6]);
-                }
-
-                /*
-
-                preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
+              preg_match('(/^[A-Za-z0-9\s]+$/)', $nomPlazaOxxo, $matchNombrePlaza); 
+                
                 //print_r($matchNombrePlaza);
+                //('([0-9A-Za-z]{1,25})','gi')
 
-                if(strlen($matchNombrePlaza) === strlen($data[0])){
+                if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
                     echo "paso";
+                    echo '</br> es el match '.$matchNombrePlaza[0];
+                    echo '</br> es lo recibido '.$data[0];
                     } 
                     else
-                        echo "no pasa";
+                        echo "no pasa </br>";
 
-                //var_dump ("tu match ". $matchNombrePlaza[0].'</br>');
+
+              
+
+               
+                
                 /*preg_match('(^\d{25}$)', $nomTiendaOxxo, $matchTienda);
                 preg_match('(^\d{8}$)', $fechaPagoEnOxxo, $matchFechaPago);
                 preg_match('(^\d{5}$)', $horaPagoEnOxxo , $matchHoraPago);
@@ -55,7 +55,7 @@
                 preg_match('(^\d{1,7}$)', $importePagado, $matchImporte);*/
 
                 /*if(count($matchNombrePlaza > 0)){
-                 //echo "coincide :)";
+                  $d[] = $data;
                 }else{
                  //echo "no coincide :(";
                 } */                                           
@@ -65,6 +65,79 @@
             }         
           
     } 
+
+    public function validarTodo(){
+
+     $this->validarNombTiendaOxxo();
+     $this->validarFechaPagoEnOxxo();
+     $this->validarFechaPagoEnOxxo();
+     $this->validarHoraPagoOxxo();
+     $this->validarBarcodeReciboPt1();
+     $this->validarBarcodeReciboPt2();
+     $this->validaImportePagado();
+
+    }
+
+    public function validarNombPLazaOxxo(){
+      
+      $nombrePlazaValido;
+
+      $datosLeidos=$this->leerArchivo();
+       preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
+                //print_r($matchNombrePlaza);
+
+                if(strlen($matchNombrePlaza) === strlen($data[0])){
+                    echo "paso";
+                    } 
+                    else
+                        echo "no pasa";
+
+
+      return nombrePlazaValido;
+    }
+
+    public function validarNombTiendaOxxo(){
+
+      preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
+                //print_r($matchNombrePlaza);
+
+                if(strlen($matchNombrePlaza) === strlen($data[0])){
+                    echo "paso";
+                    } 
+                    else
+                        echo "no pasa";
+
+      return nombreTiendaValido;
+    }
+
+    public function validarFechaPagoEnOxxo(){
+
+      preg_match('(^\d{8}$)', $fechaPagoEnOxxo, $matchFechaPago);
+      return fechaPagoValido;
+    }
+
+    public function validarHoraPagoOxxo(){
+
+      preg_match('(^\d{5}$)', $horaPagoEnOxxo , $matchHoraPago);
+      return horaPagoValido;
+    }
+    public function validarBarcodeReciboPt1(){
+
+      preg_match('(^\d{1,25}$)', $barcodeReciboPt1, $matchBarcodePt1);
+      return barcodePt1Valido;
+    }
+    public function validarBarcodeReciboPt2(){
+
+      preg_match('(^\d{1,25}$)', $barcodeReciboPt2, $matchBarcodePt1);
+      return barcodePt2Valido;
+    }
+    public function validaImportePagado(){
+
+      preg_match('(^\d{1,7}$)', $importePagado, $matchImporte);
+      return importeValido;
+    }
+
+
 
     public function guardarDatosTxt() {
 
@@ -102,9 +175,6 @@
 $datos = new Datos();
 $d= $datos -> leerArchivo();
 print_r($d);
-
-
-
 
 
 
