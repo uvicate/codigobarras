@@ -21,21 +21,19 @@
                               
 
                 $nomPlazaOxxo = $data[0];
-                echo "</br>tu nombre plaza ".$nomPlazaOxxo;  
+                echo "</br>tu nombre plaza: ".$nomPlazaOxxo." ";  
                 /*$nomTiendaOxxo = $data[1];
                 $fechaPagoEnOxxo = $data[2];
                 $horaPagoEnOxxo = $data[3];
                 $barcodeReciboPt1 = $data[4];
                 $barcodeReciboPt2 = $data[5];
-                $importePagado = $data[6]; */                           
+                $importePagado = $data[6]; */ 
+                echo "</br> tu data 0 mide: ".strlen($data[0]);                          
                 
-              preg_match('(/^[A-Za-z0-9\s]+$/)', $nomPlazaOxxo, $matchNombrePlaza); 
-                
-                //print_r($matchNombrePlaza);
-                //('([0-9A-Za-z]{1,25})','gi')
-
+              preg_match('(^[A-Za-z0-9\s]+$)', $nomPlazaOxxo, $matchNombrePlaza); 
+                            
                 if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
-                    echo "paso";
+                    echo " ,paso ";
                     echo '</br> es el match '.$matchNombrePlaza[0];
                     echo '</br> es lo recibido '.$data[0];
                     } 
