@@ -19,7 +19,7 @@
               $data  = explode(",", fgets($fp));//SI SE LEE SEPARADO POR COMAS
                                      
                               
-
+                $d[]=$data;
                 $nomPlazaOxxo = $data[0];
                 echo "</br></br>tu nombre plaza: ".$nomPlazaOxxo." ";  
                 /*$nomTiendaOxxo = $data[1];
@@ -31,7 +31,7 @@
                 echo "</br> tu data 0 mide: ".strlen($data[0])."</br>";                          
                 
               //preg_match('(^[A-Za-z0-9/s]{1,25}+$)', $data[0], $matchNombrePlaza); 
-              preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza);    
+              preg_match('([\w\s\d]{25})', $nomPlazaOxxo, $matchNombrePlaza);    
                 echo($matchNombrePlaza[0]);
                if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
                     echo " ,paso ";
@@ -54,7 +54,7 @@
              }                            
           } else{ 
               echo "Error de subida";
-            }         
+            } return($d);
           
     } 
 
@@ -75,14 +75,16 @@
       $nombrePlazaValido;
 
       $datosLeidos=$this->leerArchivo();
-       preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
-                //print_r($matchNombrePlaza);
-
-                if(strlen($matchNombrePlaza) === strlen($data[0])){
-                    echo "paso";
+      
+      preg_match('([\w\s\d]{25})', $nomPlazaOxxo, $matchNombrePlaza);    
+                echo($matchNombrePlaza[0]);
+               if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
+                    echo " ,paso ";
+                    echo '</br> es el match '.$matchNombrePlaza[0];
+                    echo '</br> es lo recibido '.$data[0];
                     } 
                     else
-                        echo "no pasa";
+                        echo "no pasa </br>";
 
 
       return nombrePlazaValido;
@@ -90,14 +92,15 @@
 
     public function validarNombTiendaOxxo(){
 
-      preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza); 
-                //print_r($matchNombrePlaza);
-
-                if(strlen($matchNombrePlaza) === strlen($data[0])){
-                    echo "paso";
+       preg_match('([\w\s\d]{1,25})', $nomPlazaOxxo, $matchNombrePlaza);    
+                echo($matchNombrePlaza[0]);
+               if(strlen($matchNombrePlaza[0]) === strlen($data[0])){
+                    echo " ,paso ";
+                    echo '</br> es el match '.$matchNombrePlaza[0];
+                    echo '</br> es lo recibido '.$data[0];
                     } 
                     else
-                        echo "no pasa";
+                        echo "no pasa </br>";
 
       return nombreTiendaValido;
     }
